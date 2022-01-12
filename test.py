@@ -178,7 +178,7 @@ if __name__ == '__main__':
     # config.first_subsampling_dl = [new voxel size for first layer]
     
     model = KPFCNN(config)
-    model.load_state_dict(torch.load(f'/data/D3Feat/snapshot/{args.chosen_snapshot}/models/model_best_acc.pth')['state_dict'])
+    model.load_state_dict(torch.load(f'/data/D3Feat/snapshot/{args.chosen_snapshot}/models/model_best_acc.pth')['state_dict'],strict=False)
     print(f"Load weight from snapshot/{args.chosen_snapshot}/models/model_best_acc.pth")
     model.eval()
 
